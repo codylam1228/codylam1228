@@ -9,6 +9,12 @@ concurrency:
   group: loa-game
   cancel-in-progress: false
 
+# Grant permissions for GitHub API access
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
 jobs:
   move:
     runs-on: ubuntu-latest
@@ -66,7 +72,7 @@ jobs:
           await github.rest.reactions.createForIssue({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            issue_number: context.issue.number,
+            issue_number: ${{ github.event.issue.number }},
             content: 'eyes'
           });
 
@@ -76,8 +82,8 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
-          const issueNumber = context.issue.number;
-          const userLogin = context.issue.user.login;
+          const issueNumber = ${{ github.event.issue.number }};
+          const userLogin = '${{ github.event.issue.user.login }}';
           const success = steps.process_move.outputs.success === 'true';
           const message = steps.process_move.outputs.message || 'Could not process move. Please check the move format.';
           
@@ -87,7 +93,7 @@ jobs:
             if (message.includes('Game over')) {
               commentBody += '\n\nThat\'s game over! Thank you for playing.';
             }
-            commentBody += '\n\nView back at https://github.com/${{ github.repository }}';
+            commentBody += `\n\nView back at https://github.com/${context.repo.owner}/${context.repo.repo}`;
           } else {
             commentBody = `@${userLogin} ${message}`;
           }
@@ -108,7 +114,7 @@ jobs:
           await github.rest.issues.update({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            issue_number: context.issue.number,
+            issue_number: ${{ github.event.issue.number }},
             state: 'closed'
           });
 
