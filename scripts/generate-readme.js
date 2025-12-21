@@ -14,9 +14,10 @@ function generateBoard(game) {
   let board = '|   | A | B | C | D | E | F | G | H |\n';
   board += '| - | - | - | - | - | - | - | - | - |\n';
 
-  // Board mapping: row 0 (top) displays as row 8, row 7 (bottom) displays as row 1
-  for (let displayRow = 8; displayRow >= 1; displayRow--) {
-    const actualRow = 8 - displayRow;
+  // Board mapping: row 0 (top in array) displays as row 1, row 7 (bottom in array) displays as row 8
+  // Iterate from 1 to 8 to show row 1 at top, row 8 at bottom
+  for (let displayRow = 1; displayRow <= 8; displayRow++) {
+    const actualRow = 8 - displayRow; // Convert display row (1-8) to array row (7-0)
     board += `| ${displayRow} |`;
 
     for (let col = 0; col < 8; col++) {

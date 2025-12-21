@@ -176,19 +176,23 @@ class LOAGame {
   }
 
   // Convert algebraic notation (e.g., "a1") to row/col coordinates
+  // With display: row 1 at top, row 8 at bottom
+  // So a1 (display row 1) maps to array row 7, a8 (display row 8) maps to array row 0
   static algebraicToCoords(algebraic) {
     if (algebraic.length !== 2) return null;
     const col = algebraic.charCodeAt(0) - 97; // 'a' = 0
-    const row = 8 - parseInt(algebraic[1]); // '1' = row 7, '8' = row 0
+    const displayRow = parseInt(algebraic[1]); // '1' through '8'
+    const row = 8 - displayRow; // '1' = array row 7 (top), '8' = array row 0 (bottom)
     if (col < 0 || col > 7 || row < 0 || row > 7) return null;
     return { row, col };
   }
 
   // Convert row/col coordinates to algebraic notation (e.g., "a1")
+  // Array row 7 (top) maps to display row 1 (a1), array row 0 (bottom) maps to display row 8 (a8)
   static coordsToAlgebraic(row, col) {
     const colChar = String.fromCharCode(97 + col);
-    const rowNum = 8 - row;
-    return `${colChar}${rowNum}`;
+    const displayRow = 8 - row; // array row 7 → display row 1, array row 0 → display row 8
+    return `${colChar}${displayRow}`;
   }
 
   // Export game state to PGN-like format
