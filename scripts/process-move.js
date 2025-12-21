@@ -19,26 +19,40 @@ function errorExit(message, code = 1) {
 }
 
 function parseIssueTitle(title) {
-  // Format: loa|move|<from><to>|<game_number>
+  // Format: loa|move|<from><to>|<game_number> or loa|new or loa|new||<game_number>
   const parts = title.split('|');
-  if (parts.length !== 4 || parts[0] !== 'loa') {
-    throw new Error('Invalid issue title format. Expected: loa|move|<from><to>|<game_number>');
+  if (parts.length < 2 || parts[0] !== 'loa') {
+    throw new Error('Invalid issue title format. Expected: loa|move|<from><to>|<game_number> or loa|new');
   }
 
   const cmd = parts[1];
-  const moveStr = parts[2];
-  const gameNum = parts[3];
 
-  if (cmd !== 'move') {
-    throw new Error('Only "move" command is supported');
+  if (cmd === 'new') {
+    // Parse game number: loa|new||<game_number> or loa|new (defaults to '1')
+    const gameNum = parts.length > 3 && parts[3] ? parts[3] : 
+                    (parts.length > 2 && parts[2] ? parts[2] : '1');
+    return {
+      cmd: 'new',
+      gameNum
+    };
   }
 
-  if (moveStr.length !== 4) {
+  if (cmd !== 'move') {
+    throw new Error('Only "move" or "new" commands are supported');
+  }
+
+  if (parts.length < 3) {
+    throw new Error('Move command requires format: loa|move|<from><to>|<game_number>');
+  }
+
+  const moveStr = parts[2];
+  if (!moveStr || moveStr.length !== 4) {
     throw new Error('Move must be 4 characters (e.g., "a1c1")');
   }
 
   const from = moveStr.substring(0, 2);
   const to = moveStr.substring(2, 4);
+  const gameNum = parts[3] || '1';
 
   const fromCoords = LOAGame.algebraicToCoords(from);
   const toCoords = LOAGame.algebraicToCoords(to);
@@ -139,10 +153,70 @@ function generateAndSaveREADME(game) {
   }
 }
 
+function handleNewGame() {
+  try {
+    // Delete game state file
+    try {
+      if (fs.existsSync(GAME_DATA_PATH)) {
+        fs.unlinkSync(GAME_DATA_PATH);
+      }
+    } catch (error) {
+      console.error('Warning: Could not delete game file:', error.message);
+      // Continue anyway - will be overwritten when new game is saved
+    }
+
+    // Clear tracking files
+    try {
+      fs.writeFileSync(LAST_MOVER_PATH, '', 'utf8');
+      fs.writeFileSync(RECENT_MOVES_PATH, '', 'utf8');
+    } catch (error) {
+      console.error('Warning: Could not clear tracking files:', error.message);
+      // Continue anyway - not critical for new game creation
+    }
+
+    // Create new game
+    const game = new LOAGame();
+
+    // Generate and save README
+    generateAndSaveREADME(game);
+
+    console.log('SUCCESS: New game created successfully.');
+    return {
+      success: true,
+      message: 'New game created successfully.'
+    };
+  } catch (error) {
+    console.error(`ERROR: ${error.message}`);
+    return {
+      success: false,
+      message: error.message
+    };
+  }
+}
+
 function processMove() {
   try {
     // Parse issue title
     const moveInfo = parseIssueTitle(ISSUE_TITLE);
+
+    // Handle new game request
+    if (moveInfo.cmd === 'new') {
+      // Only allow new game if current game is over (or if it's the repo owner)
+      try {
+        const currentGame = loadGame();
+        if (!currentGame.winner && USER_LOGIN !== 'codylam1228') {
+          throw new Error('Cannot start a new game while the current game is still in progress.');
+        }
+      } catch (error) {
+        // If game can't be loaded, that's fine - we'll create a new one
+        if (!error.message.includes('Cannot start')) {
+          // Allow creating new game if file doesn't exist
+        } else {
+          throw error;
+        }
+      }
+      return handleNewGame();
+    }
 
     // Check if same user made last move
     checkLastMover();

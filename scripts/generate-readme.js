@@ -98,7 +98,8 @@ function generateREADME(game) {
   // Move links or game over
   if (game.winner) {
     readme += '## Play again?\n\n';
-    readme += 'Create a new issue with title: `loa|new`\n\n';
+    const newGameUrl = `https://github.com/${REPO}/issues/new?title=loa%7Cnew&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.`;
+    readme += `[Start a new game](${newGameUrl})\n\n`;
   } else {
     const legalMoves = game.getAllLegalMoves();
     if (legalMoves.length > 0) {

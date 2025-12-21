@@ -15,7 +15,7 @@
 
 ## Play again?
 
-Create a new issue with title: `loa|new`
+[Start a new game](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cnew&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.)
 
 **Last few moves, this game**
 

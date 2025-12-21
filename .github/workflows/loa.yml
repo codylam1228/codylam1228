@@ -26,6 +26,8 @@ jobs:
         echo "EVENT_ISSUE_NUMBER=${{ github.event.issue.number }}" >> $GITHUB_ENV
         echo "EVENT_USER_LOGIN=${{ github.event.issue.user.login }}" >> $GITHUB_ENV
         echo "ISSUE_TITLE=${{ github.event.issue.title }}" >> $GITHUB_ENV
+        GAME_NUM=$(echo "${{ github.event.issue.title }}" | cut -d'|' -f4 || echo "1")
+        echo "GAME_NUM=${GAME_NUM}" >> $GITHUB_ENV
 
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -136,6 +138,10 @@ jobs:
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
         git add loa_games/*.pgn loa_games/*.txt README.md
-        MOVE_STR=$(echo "${{ env.ISSUE_TITLE }}" | cut -d'|' -f3)
-        git commit -m "${{ env.EVENT_USER_LOGIN }} move $MOVE_STR" || exit 0
+        if echo "${{ env.ISSUE_TITLE }}" | grep -q "loa|new"; then
+          git commit -m "${{ env.EVENT_USER_LOGIN }} new game" || exit 0
+        else
+          MOVE_STR=$(echo "${{ env.ISSUE_TITLE }}" | cut -d'|' -f3)
+          git commit -m "${{ env.EVENT_USER_LOGIN }} move $MOVE_STR" || exit 0
+        fi
         git push || exit 0
