@@ -1,0 +1,14 @@
+{
+  "name": "loa-github-game",
+  "version": "1.0.0",
+  "description": "Lines of Action game on GitHub",
+  "main": "scripts/process-move.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@octokit/rest": "^20.0.2"
+  },
+  "type": "commonjs"
+}
+
