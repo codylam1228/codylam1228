@@ -76,6 +76,18 @@ jobs:
             content: 'eyes'
           });
 
+    - name: Set step outputs as env vars
+      if: always()
+      run: |
+        if [ -n "${{ steps.process_move.outputs.success }}" ]; then
+          echo "MOVE_SUCCESS=${{ steps.process_move.outputs.success }}" >> $GITHUB_ENV
+        else
+          echo "MOVE_SUCCESS=false" >> $GITHUB_ENV
+        fi
+        echo "MOVE_MESSAGE<<EOF" >> $GITHUB_ENV
+        echo "${{ steps.process_move.outputs.message }}" >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
+
     - name: Comment on issue
       if: always()
       uses: actions/github-script@v7
@@ -84,8 +96,8 @@ jobs:
         script: |
           const issueNumber = ${{ github.event.issue.number }};
           const userLogin = '${{ github.event.issue.user.login }}';
-          const success = steps.process_move.outputs.success === 'true';
-          const message = steps.process_move.outputs.message || 'Could not process move. Please check the move format.';
+          const success = process.env.MOVE_SUCCESS === 'true';
+          const message = process.env.MOVE_MESSAGE || 'Could not process move. Please check the move format.';
           
           let commentBody = '';
           if (success) {
@@ -119,7 +131,7 @@ jobs:
           });
 
     - name: Commit and push changes
-      if: steps.process_move.outputs.success == 'true'
+      if: steps.process_move.outputs.success == 'true' && steps.process_move.outcome == 'success'
       run: |
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
