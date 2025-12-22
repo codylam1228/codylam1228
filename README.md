@@ -1,42 +1,31 @@
 ## Lines of Action - Community Game
 
-**Game is in progress.** This is open to ANYONE to play the next move. That's the point. 👋 It's your turn! Move a Black piece.
+**Game won by Black!** This is open to ANYONE to play. That's the point. 👋
 
 |   | A | B | C | D | E | F | G | H |
 | - | - | - | - | - | - | - | - | - |
 | 1 |   |   | ○ |   |   |   |   |   |
 | 2 |   |   |   |   |   |   |   | ○ |
-| 3 |   |   |   |   | ● |   |   |   |
+| 3 |   |   |   |   |   |   |   |   |
 | 4 |   |   | ○ |   |   | ● |   | ○ |
 | 5 |   |   |   |   | ● | ● |   |   |
-| 6 | ○ |   |   | ○ |   |   |   |   |
+| 6 | ○ |   |   | ○ | ● |   |   |   |
 | 7 | ○ |   |   |   |   | ● |   |   |
 | 8 | ○ | ● | ● | ● | ● | ○ | ● |   |
 
-#### **BLACK:** It's your move... to choose _where_ to move...
+## Play again?
 
-| FROM | TO - _just click one of the links_ :) |
-| ---- | -- |
-| **B8** | [B7](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cb8b7%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) |
-| **C8** | [A6](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cc8a6%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [C5](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cc8c5%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [E6](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cc8e6%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) |
-| **D8** | [C7](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cd8c7%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [D6](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cd8d6%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [F6](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cd8f6%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) |
-| **E3** | [C5](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Ce3c5%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [D3](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Ce3d3%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [E6](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Ce3e6%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [F3](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Ce3f3%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [G1](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Ce3g1%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [H6](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Ce3h6%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) |
-| **E5** | [C5](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Ce5c5%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [D4](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Ce5d4%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [E2](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Ce5e2%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [F6](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Ce5f6%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [G5](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Ce5g5%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) |
-| **E8** | [D7](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Ce8d7%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [G6](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Ce8g6%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) |
-| **F4** | [C1](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cf4c1%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [C4](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cf4c4%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [F8](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cf4f8%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) |
-| **F5** | [D5](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cf5d5%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [D7](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cf5d7%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [E4](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cf5e4%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [F1](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cf5f1%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [G6](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cf5g6%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [H3](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cf5h3%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [H5](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cf5h5%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) |
-| **F7** | [C4](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cf7c4%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [D7](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cf7d7%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [F3](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cf7f3%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [H5](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cf7h5%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [H7](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cf7h7%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) |
-| **G8** | [D5](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cg8d5%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [G7](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cg8g7%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) , [H7](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cmove%7Cg8h7%7C1&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.) |
+[Start a new game](https://github.com/codylam1228/codylam1228/issues/new?title=loa%7Cnew&body=Just+push+%27Submit+new+issue%27.+You+don%27t+need+to+do+anything+else.)
 
 **Last few moves, this game**
 
 | Move  | Who |
 | ----- | --- |
+| E3 to E6 | [@codylam1228](https://github.com/codylam1228) |
 | B4 to D6 | [@antonlam](https://github.com/antonlam) |
 | H3 to F5 | [@codylam1228](https://github.com/codylam1228) |
 | A5 to B4 | [@antonlam](https://github.com/antonlam) |
 | F3 to F7 | [@codylam1228](https://github.com/codylam1228) |
-| H7 to F7 | [@antonlam](https://github.com/antonlam) |
 
 **How this works**
 
