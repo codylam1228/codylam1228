@@ -87,7 +87,7 @@ function generateREADME(game) {
     readme += `**Game won by ${winnerName}!** `;
     readme += 'This is open to ANYONE to play. That\'s the point. 👋\n\n';
   } else {
-    const currentPlayer = game.turn === Piece.BLACK ? 'Black' : 'White';
+    const currentPlayer = game.turn === Piece.BLACK ? '●' : '○';
     readme += `**Game is in progress.** This is open to ANYONE to play the next move. That's the point. 👋 It's your turn! Move a ${currentPlayer} piece.\n\n`;
   }
 
